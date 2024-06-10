@@ -1,0 +1,33 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: workload
+spec:
+  selector:
+    app: workload
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workload
+  labels:
+    app: workload
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: workload
+  template:
+    metadata:
+      labels:
+        app: workload
+    spec:
+      containers:
+      - name: "workload"
+        image: docker.io/bonavadeur/workload-app:latest
+        ports: 
+        - containerPort: 8080
