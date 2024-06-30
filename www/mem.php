@@ -1,4 +1,5 @@
 <?php
+    ini_set('memory_limit', '-1');
     $num = intval($_GET['value']);
     $memnum = intval($_GET['memory']);
 
@@ -36,7 +37,7 @@
     $rmemnum = $memnum *1024*1024;
 
 
-    echo "sleep $timenum ms, with $memnum MB memory\n";
+    echo "sleep $num ms, with $memnum MB memory\n";
 
     $base = str_repeat("helloworldhelloworld", 100);
     $base10w = str_repeat($base, 50);

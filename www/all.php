@@ -1,4 +1,5 @@
 <?php
+    ini_set('memory_limit', '-1');
     $timenum = intval($_GET['value']);
     $memnum = intval($_GET['memory']);
     $num = intval($_GET["cpu"]);

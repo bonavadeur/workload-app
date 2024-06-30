@@ -9,7 +9,7 @@ It also enables the **mod_status** of the httpd server, so that user can have a 
 
 
 # Build docker image #
-Build a docker image. (`chung123abc/webapp` is the image in dockerhub)
+Build a docker image.
 ```console
 $ export imageName="webapp"
 $ docker build -t $imageName .
